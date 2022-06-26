@@ -1,43 +1,40 @@
+names_and_notes_of_the_students = []
+studensts_names = 'students'
+failed_student = "fail_student9" 
+early_student = '9'
+note = '9'
 
-from re import L
+print()
+total_of_students = int(input("the total of students in the class is: "))
+print()
 
+while total_of_students > 100 or total_of_students < 1:
+    total_of_students = int(input("invalid number, please digit on number in range 1 - 100: "))
+for contador in range(total_of_students):
+    names_and_notes_of_the_students.append(input("please, digit the name of one student and after, how many exercises he did: "))
+    studensts_names = names_and_notes_of_the_students[contador] 
+    while len(studensts_names) > 30 or len(studensts_names) < 1:
+        names_and_notes_of_the_students[contador] = (input("invalid number, digit the name of one student and after, how many exercises he did: "))
+        studensts_names = names_and_notes_of_the_students
 
-nomes_e_notas_dos_alunos = []
-nome_de_um_aluno = 'aluno'
-aluno_reprovado = "aluno_reprovado9" 
-aluno_anterior = '9'
-nota = '9'
-
-quantidade_de_alunos = int(input("a quantidade de alunos na sala é = "))
-
-
-while quantidade_de_alunos > 100 or quantidade_de_alunos < 1:
-    quantidade_de_alunos = int(input("numero invalido, por favor digite um numero entre 1 a 100: "))
-for contador in range(quantidade_de_alunos):
-    nomes_e_notas_dos_alunos.append(input("digite o nome do aluno, e quantos exercicios ele resolveu: "))
-    nome_de_um_aluno = nomes_e_notas_dos_alunos[contador] 
-    while len(nome_de_um_aluno) > 30 or len(nome_de_um_aluno) < 1:
-        nomes_e_notas_dos_alunos[contador] = (input("numero invalido, digite o nome do aluno, e quantos exercicios ele resolveu: "))
-        nome_de_um_aluno = nomes_e_notas_dos_alunos
-
-for cont in range(quantidade_de_alunos):
-    for cont2 in range(quantidade_de_alunos):
-        aluno_anterior = nota
-        alunox = nomes_e_notas_dos_alunos[cont]
+for cont in range(total_of_students):
+    for cont2 in range(total_of_students):
+        early_student = note
+        alunox = names_and_notes_of_the_students[cont]
         tamanho = len(alunox) - 1
-        nota = (alunox[tamanho])
-        if nota == '0':
+        note = (alunox[tamanho])
+        if note == '0':
             tamanho = len(alunox) - 2
-            nota = (alunox[tamanho])
-            if nota == '1': 
-                nota = '9'
-        elif nota > aluno_anterior:
-            nota = aluno_anterior
-        elif nota < aluno_anterior: 
-            aluno_reprovado = alunox
-        elif nota == aluno_anterior:
-            if aluno_reprovado < alunox:
-                aluno_reprovado = alunox
+            note = (alunox[tamanho])
+            if note == '1': 
+                note = '9'
+        elif note > early_student:
+            note = early_student
+        elif note < early_student: 
+            failed_student = alunox
+        elif note == early_student:
+            if failed_student < alunox:
+                failed_student = alunox
 
-
-print("o aluno(a) reprovado foi:", aluno_reprovado[0:len(aluno_reprovado)-2])
+print()
+print("the student that failed is", failed_student[0:len(failed_student)-2])
