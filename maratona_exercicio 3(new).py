@@ -1,30 +1,32 @@
-numero = int(input("digite um número: "))
-contador = 2
-verificador_float = 0
-deu_certo = 0
-fatores_primos = 0
+print()
+number = int(input("digit a number please: "))
+print()
+timer = 2
+have_joined = 0
+prime_factors = 0
 
-while  numero > 1000000:
-    numero = int(input("digite um número menor por favor: "))
+while  number > 1000000:
+    print()
+    number = int(input("please, digit a number less than 1000000:  "))
+    print()
 
-primeiro_numero = numero
+first_number = number
 
 
-while numero !=1:
-    numero = numero/contador
-    numero_debugger = int(numero+1)
-    numero_final = numero_debugger - numero
-    if numero_final < 1:
-            numero = primeiro_numero
-            contador = contador + 1
-            deu_certo = 0
-    elif numero_final == 1:
-        deu_certo = deu_certo+1
-        if deu_certo < 2:
-            fatores_primos = fatores_primos + 1
+while number !=1:
+    number = number/timer
+    number_float_test = int(number+1)
+    last_number = number_float_test - number
+    if last_number < 1:
+            number = first_number
+            timer = timer + 1
+            have_joined = 0
+    elif last_number == 1:
+        have_joined = have_joined+1
+        if have_joined < 2:
+            prime_factors = prime_factors + 1
 
-    primeiro_numero = numero
+    first_number = number
 
-    
-print("o resultado final foi:",numero)
-print("fatores primos foram igual a:", fatores_primos)
+print()
+print("the total of prime factors of this number is: ", prime_factors)
